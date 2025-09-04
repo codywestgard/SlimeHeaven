@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2w4rrq4fs6ry"]
+
+[ext_resource type="Script" uid="uid://b77odp3lrg7sx" path="res://scenes/UI_files/inventory.gd" id="1_s887n"]
+[ext_resource type="PackedScene" uid="uid://cvui28bpmatrp" path="res://scenes/UI_files/weapon_panel.tscn" id="1_ty45s"]
+[ext_resource type="Script" uid="uid://qc2yhj7i20qg" path="res://scenes/UI_files/test_grid_container.gd" id="3_ty45s"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s887n")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.637843, 0.637843, 0.637843, 1)
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+
+[node name="TopVbox" type="VBoxContainer" parent="InventoryUI"]
+offset_right = 1151.0
+offset_bottom = 649.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="InventoryUI/TopVbox"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Weapon Manager"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryUI/TopVbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WeaponSlots" type="VBoxContainer" parent="InventoryUI/TopVbox/HBoxContainer"]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+
+[node name="Weapon_Panel" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots" instance=ExtResource("1_ty45s")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel"]
+layout_mode = 2
+text = "First Panel"
+
+[node name="Weapon_Panel2" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots" instance=ExtResource("1_ty45s")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel2"]
+layout_mode = 2
+text = "Secodn Panel"
+
+[node name="Weapon_Panel3" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots" instance=ExtResource("1_ty45s")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel3"]
+layout_mode = 2
+text = "Third"
+
+[node name="Weapon_Panel4" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots" instance=ExtResource("1_ty45s")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel4"]
+layout_mode = 2
+text = "Fourth"
+
+[node name="PlayerArea" type="VBoxContainer" parent="InventoryUI/TopVbox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TestGridContainer" type="Panel" parent="InventoryUI/TopVbox/HBoxContainer/PlayerArea"]
+layout_mode = 2
+script = ExtResource("3_ty45s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryUI/TopVbox/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InventoryUI/TopVbox/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "This holds the unused gear, also how you reassign
+"
+
+[node name="Inventory" type="GridContainer" parent="InventoryUI/TopVbox/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 5

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bia6sqb7rx6un"]
+
+[ext_resource type="Script" uid="uid://b827d8eqawp3m" path="res://scenes/weapon_files/raycast_gun.gd" id="1_fwy4h"]
+[ext_resource type="Texture2D" uid="uid://cqst61qi2dwg4" path="res://assets/sniper.png" id="1_lnopb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwy4h"]
+
+[node name="RaycastGun" type="Area2D"]
+script = ExtResource("1_fwy4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+texture = ExtResource("1_lnopb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fwy4h")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]

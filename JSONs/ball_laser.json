@@ -1,0 +1,6 @@
+{
+	"id": "ball_laser",
+	"display_name": "Ball Laser",
+	"type": "weapon",
+	"sprite_path": "res://assets/weapons/ball_laser.png",
+}

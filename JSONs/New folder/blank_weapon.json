@@ -1,0 +1,14 @@
+{
+	"id": "",
+	"name": "",
+	"type": "",
+	"damage": 1,
+	"fire_rate": 1,
+	"projectile_speed": 100,
+	"range": 1000,
+	"pierce": 0,
+	"knockback": 0,
+	"crit_chance": 0.,
+	"crit_multiplier": 1.0,
+	"sprite_path": "res://assets/weapons/laser_blaster.png",
+}

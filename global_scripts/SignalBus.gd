@@ -1,0 +1,5 @@
+extends Node
+
+signal SpawnSlimeButtonPressed
+signal SpawnWalkerButtonPressed
+signal WeaponSelectButtonPressed(weapon_name: String)

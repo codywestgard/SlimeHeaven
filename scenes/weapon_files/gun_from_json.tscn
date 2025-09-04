@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://br5j6pggf7yi0"]
+
+[ext_resource type="PackedScene" uid="uid://dpecd880w1tf6" path="res://scenes/weapon_files/basic_gun.tscn" id="1_lp86a"]
+[ext_resource type="Script" uid="uid://cv3mpq52jrq4r" path="res://scenes/weapon_files/gun_from_json.gd" id="2_50p7j"]
+
+[node name="Gun_from_JSON" instance=ExtResource("1_lp86a")]
+script = ExtResource("2_50p7j")

@@ -1,0 +1,6 @@
+{
+	"id": "shotgun",
+	"display_name": "Shotgun",
+	"type": "weapon",
+	"sprite_path": "res://assets/weapons/shotgun.png",
+}

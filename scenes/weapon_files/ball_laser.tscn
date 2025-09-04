@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgm6mbcmlr08e"]
+
+[ext_resource type="PackedScene" uid="uid://dpecd880w1tf6" path="res://scenes/weapon_files/basic_gun.tscn" id="1_u75ib"]
+[ext_resource type="Script" uid="uid://bpgtc0em24ypx" path="res://scenes/weapon_files/ball_laser.gd" id="2_vaaav"]
+[ext_resource type="Texture2D" uid="uid://cdtpth4g6jjwm" path="res://assets/weapons/ball_laser.png" id="3_lgpgq"]
+
+[node name="Basic_Gun" instance=ExtResource("1_u75ib")]
+script = ExtResource("2_vaaav")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_lgpgq")

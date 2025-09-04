@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvui28bpmatrp"]
+
+[ext_resource type="Script" uid="uid://beq0rrucv0gu8" path="res://scenes/UI_files/weapon_panel.gd" id="1_3qjp0"]
+[ext_resource type="Texture2D" uid="uid://oihysixrjrkl" path="res://assets/weapons/ball_laser_backup.png" id="1_24wni"]
+[ext_resource type="Texture2D" uid="uid://d2gg1p2g0cjc4" path="res://assets/weapons/microchip.png" id="2_3qjp0"]
+[ext_resource type="Texture2D" uid="uid://48ch17mpkq1j" path="res://assets/weapons/scope.png" id="3_mp28e"]
+
+[node name="Weapon_Panel" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 100)
+offset_right = 237.0
+offset_bottom = 118.0
+script = ExtResource("1_3qjp0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Weapon" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Weapon"]
+layout_mode = 2
+text = "Weapon"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Weapon"]
+layout_mode = 2
+texture = ExtResource("1_24wni")
+
+[node name="Chip" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Chip"]
+layout_mode = 2
+text = "Chip"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Chip"]
+layout_mode = 2
+texture = ExtResource("2_3qjp0")
+
+[node name="Attachment" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Attachment"]
+layout_mode = 2
+text = "Attachment"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attachment"]
+layout_mode = 2
+texture = ExtResource("3_mp28e")
