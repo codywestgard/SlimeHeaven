@@ -1,0 +1,8 @@
+{
+	"id": "blue_chip",
+	"display_name": "Blue Chip",
+	"display_information": "Targets farthest enemy",
+	"type": "chip",
+	"targeting_algorithm": 1,
+	"sprite_path": "res://assets/chips/blue_chip.png",
+}

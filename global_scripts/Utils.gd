@@ -1,23 +1,28 @@
 extends Node
 
 var player_node: Node2D
+var inventory_node: Control
 var enemy_node: Node2D
 
-enum TargetingStrategy {
-	NEAREST,
-	FARTHEST,
-	HIGHEST_HP,
-	LOWEST_HP,
-}
 
 enum CollisionLayers {
 	PLAYER,
 	ENEMIES,	
 }
 
+func get_player_node():
+	return player_node
+
 func get_player_position():
 	return player_node.global_position
 
+func get_inventory_top_node():
+	return inventory_node
+
+func clear_children(target_node: Node):
+	for child in target_node.get_children():
+		child.queue_free()
+		
 func set_friendly_collision(entity):
 	## Player does this, will collide with enemies not player stuff
 	entity.set_collision_layer_value(Utils.CollisionLayers.PLAYER, true)
@@ -32,51 +37,24 @@ func set_hostile_collision(entity):
 	entity.set_collision_mask_value(Utils.CollisionLayers.PLAYER, true)
 	entity.set_collision_mask_value(Utils.CollisionLayers.ENEMIES, false)
 
+func load_json(path):
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		push_error("Failed to open JSON file at: " + path)
+		return
 
+	var json_text := file.get_as_text()
+	file.close()
 
-func get_nearest_target(start_pos: Vector2, entities: Array, max_dist: float = 300.) -> Node2D:
-	var nearest: Node2D
-	var shortest := INF #max_dist * max_dist
+	var json := JSON.new()
+	var error := json.parse(json_text)
 
-	for entity in entities:
-		if entity.is_in_group("enemies"):
-			var dist = start_pos.distance_squared_to(entity.global_position)
-			if dist < shortest:
-				shortest = dist
-				nearest = entity
-	return nearest
+	if error != OK:
+		push_error("JSON parse error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+		return
 
-func get_farthest_target(start_pos: Vector2, entities: Array, max_dist: float = 500) -> Node2D:
-	#TODO optional add a minimum distance too
-	var nearest: Node2D
-	var max_dist_sq := max_dist * max_dist
-	var farthest := -INF
-
-	for entity in entities:
-		var dist = start_pos.distance_squared_to(entity.global_position)
-		if dist > farthest and dist < max_dist_sq:
-			farthest = dist
-			nearest = entity
-	return nearest
-
-func get_highest_hp_target(start_pos: Vector2, entities: Array, max_dist: float = 500) -> Node2D:
-	var best_target : Node2D
-	var best_metric := -INF
-	
-	for entity in entities:
-		var metric = entity.hp
-		if metric > best_metric:
-			best_target = entity
-			best_metric = metric
-	return best_target
-	
-func get_lowest_hp_target(start_pos: Vector2, entities: Array, max_dist: float = 500) -> Node2D:
-	var best_target : Node2D
-	var best_metric := INF
-	
-	for entity in entities:
-		var metric = entity.hp
-		if metric < best_metric:
-			best_target = entity
-			best_metric = metric
-	return best_target
+	var data = json.data
+	if typeof(data) != TYPE_DICTIONARY:
+		push_error("Invalid JSON structure: Expected Dictionary at root")
+		return
+	return data

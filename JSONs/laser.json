@@ -3,4 +3,5 @@
 	"display_name": "Basic Laser",
 	"type": "weapon",
 	"sprite_path": "res://assets/weapons/laser.png",
+	"scene_path": "res://scenes/weapon_files/basic_gun.tscn"
 }

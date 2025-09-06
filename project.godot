@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Utils="*res://global_scripts/Utils.gd"
 SignalBus="*res://global_scripts/SignalBus.gd"
+TargetingAlgorithms="*res://global_scripts/targeting_algorithms.gd"
 
 [input]
 

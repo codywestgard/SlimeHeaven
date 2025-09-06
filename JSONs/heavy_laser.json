@@ -3,4 +3,5 @@
 	"display_name": "Heavy Laser",
 	"type": "weapon",
 	"sprite_path": "res://assets/weapons/heavy_laser.png",
+	"scene_path": "res://scenes/weapon_files/heavy_laser.tscn"
 }

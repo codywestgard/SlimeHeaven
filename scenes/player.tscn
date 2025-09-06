@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://m0l66a1wxu8x"]
+[gd_scene load_steps=5 format=3 uid="uid://m0l66a1wxu8x"]
 
 [ext_resource type="Script" uid="uid://bqaxe57kjd5s7" path="res://scenes/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bago1wq6woh34" path="res://assets/player_robot.png" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://cwak56pbvyh8" path="res://scenes/camera_2d.gd" id="3_dqkch"]
-[ext_resource type="PackedScene" uid="uid://cgm6mbcmlr08e" path="res://scenes/weapon_files/ball_laser.tscn" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
 radius = 9.0
@@ -25,7 +24,11 @@ script = ExtResource("3_dqkch")
 [node name="WeaponSlot1" type="Marker2D" parent="."]
 position = Vector2(34, 0)
 
-[node name="Basic_Gun" parent="WeaponSlot1" instance=ExtResource("5_qlg0r")]
-
 [node name="WeaponSlot2" type="Marker2D" parent="."]
-position = Vector2(-64, 5)
+position = Vector2(-35, 0)
+
+[node name="WeaponSlot3" type="Marker2D" parent="."]
+position = Vector2(0, -30)
+
+[node name="WeaponSlot4" type="Marker2D" parent="."]
+position = Vector2(0, 20)

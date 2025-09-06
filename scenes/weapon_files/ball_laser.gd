@@ -49,7 +49,8 @@ func charge(delta):
 
 func aim():
 	var enemy_list = get_overlapping_bodies()
-	var target = Utils.get_nearest_target(self.position, enemy_list, range)
+	var target = TargetingAlgorithms.get_nearest_target(self.global_position, enemy_list)#, range)
+	print(enemy_list)
 	return target
 
 func fire(target):

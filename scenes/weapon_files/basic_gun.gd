@@ -7,6 +7,7 @@ var bullet_scene: PackedScene
 var line: Line2D
 var raycast : RayCast2D
 
+var targeting_alg : Callable
 func _ready() -> void:
 	line = $Line2D
 	raycast = $RayCast2D
@@ -17,6 +18,7 @@ func setup():
 	damage = 50
 	fire_cooldown = 0.8
 	bullet_scene = preload("res://scenes/weapon_files/basic_bullet.tscn")
+	#targeting_alg = TargetingAlgorithms()
 	update_self()
 	setup_laser_sight()
 
@@ -43,16 +45,18 @@ func _physics_process(delta: float) -> void:
 			fire(target)
 			sum_delta = 0
 
+func update_targeting_algorithm():
+	pass
+
 func aim():
 	var enemy_list = get_overlapping_bodies()
-	var target = Utils.get_nearest_target(self.position, enemy_list, range)
+	var target = TargetingAlgorithms.get_nearest_target(self.position, enemy_list)
 	return target
 
 func fire(target):
 	var new_bullet = bullet_scene.instantiate()
 	add_child(new_bullet)
 	new_bullet.setup()
-
 
 func adjust_laser_sight():
 	raycast.target_position = Vector2(1000,0)
