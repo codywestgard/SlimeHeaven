@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdxh0k5pbducc"]
+
+[ext_resource type="Script" uid="uid://xsc4uuqa4j0q" path="res://scenes/weapon_files/integrated_weapon.gd" id="1_5vuph"]
+
+[node name="Integrated_Weapon" type="Area2D"]
+script = ExtResource("1_5vuph")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]

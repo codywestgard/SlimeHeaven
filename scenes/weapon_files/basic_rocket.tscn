@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2isri0jirj2u"]
+
+[ext_resource type="PackedScene" uid="uid://bcpyw8g0et0ni" path="res://scenes/weapon_files/basic_bullet.tscn" id="1_45h8a"]
+[ext_resource type="Texture2D" uid="uid://br1o7rwyu6pm0" path="res://assets/bullets/ball_laser.png" id="2_gh8uf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tv7lo"]
+radius = 20.0
+height = 50.0
+
+[node name="Basic_Bullet" instance=ExtResource("1_45h8a")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_gh8uf")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(2, 0)
+rotation = 4.71239
+shape = SubResource("CapsuleShape2D_tv7lo")

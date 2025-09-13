@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvui28bpmatrp"]
+
+[ext_resource type="Script" uid="uid://beq0rrucv0gu8" path="res://scenes/UI_files/weapon_panel.gd" id="1_3qjp0"]
+[ext_resource type="PackedScene" uid="uid://d02dl035wifpu" path="res://scenes/UI_files/inventory_slot.tscn" id="4_3qjp0"]
+
+[node name="Weapon_Panel" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 100)
+offset_right = 237.0
+offset_bottom = 118.0
+script = ExtResource("1_3qjp0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "First Weapon Slot"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainerWeapon" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Inventory_Slot_Weapon" parent="VBoxContainer/HBoxContainer/PanelContainerWeapon" instance=ExtResource("4_3qjp0")]
+layout_mode = 2
+
+[node name="PanelContainerChip" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Inventory_Slot_Chip" parent="VBoxContainer/HBoxContainer/PanelContainerChip" instance=ExtResource("4_3qjp0")]
+layout_mode = 2
+
+[node name="PanelContainerAttachment" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Inventory_Slot_Attachment" parent="VBoxContainer/HBoxContainer/PanelContainerAttachment" instance=ExtResource("4_3qjp0")]
+layout_mode = 2

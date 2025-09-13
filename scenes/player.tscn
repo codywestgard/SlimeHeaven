@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://m0l66a1wxu8x"]
+
+[ext_resource type="Script" uid="uid://bqaxe57kjd5s7" path="res://scenes/player.gd" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bago1wq6woh34" path="res://assets/player_robot.png" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://cwak56pbvyh8" path="res://scenes/camera_2d.gd" id="3_dqkch"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 9.0
+height = 54.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
+radius = 20.0
+height = 50.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dqkch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -1)
+shape = SubResource("CapsuleShape2D_qhqgy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_dqkch")
+
+[node name="WeaponSlot1" type="Marker2D" parent="."]
+position = Vector2(34, 0)
+
+[node name="WeaponSlot2" type="Marker2D" parent="."]
+position = Vector2(-35, 0)
+
+[node name="WeaponSlot3" type="Marker2D" parent="."]
+position = Vector2(0, -30)
+
+[node name="WeaponSlot4" type="Marker2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="DamBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamBox"]
+shape = SubResource("CapsuleShape2D_dqkch")
+debug_color = Color(0.653076, 0.516137, 0.126494, 0.42)

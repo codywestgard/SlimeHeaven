@@ -1,0 +1,7 @@
+{
+	"id": "_chip",
+	"display_name": "Unknown Chip",
+	"display_information": "Targets nearest enemy",
+	"type": "chip",
+	"sprite_path": "res://assets/chips/blue_chip.png",
+}

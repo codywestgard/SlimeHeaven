@@ -1,0 +1,8 @@
+{
+	"id": "yellow_chip",
+	"display_name": "Yellow Chip",
+	"display_information": "Targets nearest enemy",
+	"type": "chip",
+	"targeting_algorithm": 0,
+	"sprite_path": "res://assets/chips/yellow_chip.png",
+}

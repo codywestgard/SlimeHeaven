@@ -1,0 +1,8 @@
+{
+	"id": "red_chip",
+	"display_name": "Red Chip",
+	"display_information": "Targets weakest enemy",
+	"type": "chip",
+	"targeting_algorithm": 3,
+	"sprite_path": "res://assets/chips/red_chip.png",
+}

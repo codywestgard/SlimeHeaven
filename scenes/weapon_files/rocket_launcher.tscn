@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbpx3byh60axt"]
+
+[ext_resource type="PackedScene" uid="uid://dpecd880w1tf6" path="res://scenes/weapon_files/basic_gun.tscn" id="1_0fwpa"]
+[ext_resource type="Texture2D" uid="uid://bha0qqegkc28y" path="res://assets/launcher.png" id="2_4wqk0"]
+[ext_resource type="Script" uid="uid://clmge2bpvri6l" path="res://scenes/weapon_files/rocket_launcher.gd" id="2_31lvl"]
+
+[node name="Basic_Gun" instance=ExtResource("1_0fwpa")]
+script = ExtResource("2_31lvl")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_4wqk0")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv1savfvycxi6"]
+
+[ext_resource type="Script" uid="uid://n3snxlb4grml" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://m0l66a1wxu8x" path="res://scenes/player.tscn" id="2_ev8b5"]
+[ext_resource type="PackedScene" uid="uid://ch5wqrjl0jlws" path="res://scenes/map.tscn" id="2_jyhfs"]
+
+[sub_resource type="Curve2D" id="Curve2D_sugp2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -334, -245, 0, 0, 0, 0, 1803, -226, 0, 0, 0, 0, 1789, 1391, 0, 0, 0, 0, -352, 1373, 0, 0, 0, 0, -343, -254)
+}
+point_count = 5
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_sugp2")
+
+[node name="Map" parent="." instance=ExtResource("2_jyhfs")]
+
+[node name="Player" parent="." instance=ExtResource("2_ev8b5")]
+position = Vector2(145, 150)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+curve = SubResource("Curve2D_sugp2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-334, -245)
+rotation = 0.00889073
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.074
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
