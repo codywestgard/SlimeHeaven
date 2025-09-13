@@ -10,7 +10,7 @@ var selected_weapon
 func _ready():
 	SignalBus.item_selected.connect(_on_item_selected)
 	SignalBus.weapon_selected.connect(_on_weapon_selected)
-	SignalBus.weapon_equipped.connect(_on_weapon_equipped)
+	#SignalBus.weapon_equipped.connect(_on_weapon_equipped)
 	
 	
 	inventory_grid.set_meta('type', ['empty', 'weapon', 'chip', 'attachment'])
@@ -42,11 +42,10 @@ func _on_weapon_selected(weapon):
 	selected_weapon = weapon
 	update_weapon_info(weapon)
 
-func _on_weapon_equipped(weapon, slot_number):
-	var node_string = "InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel" + str(slot_number)
-	var node_to_update = get_node(node_string)
-	print(node_to_update, 'node to update')
-	#node_to_update.update_weapon()
+func update_player_info():
+	# for weapon in weapon_panels:
+	# if weapon: update_player
+	# maybe update other stuff too (global relics?)
 	pass
 
 func update_weapon_info(weapon):

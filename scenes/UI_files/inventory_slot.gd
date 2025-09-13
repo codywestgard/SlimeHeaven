@@ -13,7 +13,6 @@ func _ready():
 		set_my_type("empty")
 
 func set_my_type(new_type='empty'):
-	print('type is being set to:   ', new_type)
 	self.set_meta('type', new_type)
 
 func _gui_input(event):
