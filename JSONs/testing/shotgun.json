@@ -1,0 +1,19 @@
+{
+    "id": "shotgun",
+    "display_name": "Shotgun",
+    "scene_path": "res://scenes/weapon_files_2/basic_firearm.tscn",
+    "sprite_path": "res://assets/weapons/shotgun.png",
+    "macroclass": "Weapon",
+
+    "rarity": "Common",
+    "microclass": ["firearm"],
+
+    "damage": 6.0,
+    "bullet_count": 8,
+    "fire_cooldown": 1.2,
+    "accuracy": 0.5,
+    "range": 300,
+    "ammo_full": 12,
+    "reload": 1.0,
+
+}

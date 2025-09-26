@@ -1,6 +1,8 @@
 {
 	"id": "sniper",
 	"display_name": "Sniper",
-	"type": "weapon",
-	"sprite_path": "res://assets/weapons/sniper.png",
+	"macroclass": "weapon",
+	"microclass": ["firearm"],
+	"sprite_path": "res://assets/weapons/basic_gun.png",
+	"scene_path": "res://scenes/weapon_files/basic_gun.tscn"
 }

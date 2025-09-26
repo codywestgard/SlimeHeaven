@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2lpskqymyxve"]
+
+[ext_resource type="Script" uid="uid://oar3u2tuqjnk" path="res://scenes/UI_files/cell_2d.gd" id="1_lpf5t"]
+
+[node name="Cell2D" type="Node2D"]
+script = ExtResource("1_lpf5t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

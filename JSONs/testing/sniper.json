@@ -1,0 +1,21 @@
+{
+    "id": "sniper",
+    "display_name": "Sniper Rifle",
+    "scene_path": "res://scenes/weapon_files_2/basic_firearm.tscn",
+    "sprite_path": "res://assets/weapons/sniper.png",
+    "macroclass": "Weapon",
+
+    "rarity": "Common",
+    "microclass": ["firearm"],
+
+    "damage": 30.0,
+    "bullet_count": 1,
+    "fire_cooldown": 0.5,
+    "accuracy": 1.0,
+    "range": 500,
+    "ammo_full": 12,
+    "reload": 1.0,
+
+    "bonuses": [],
+
+}

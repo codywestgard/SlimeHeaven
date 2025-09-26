@@ -1,9 +1,9 @@
 extends Control
 
 var inventory_slot_scene = preload("res://scenes/UI_files/inventory_slot.tscn")
-@onready var inventory_grid = $InventoryUI/TopVbox/HBoxContainer/VBoxContainer/Panel2/Inventory
-@onready var info_panel = $InventoryUI/TopVbox/HBoxContainer/PlayerArea/Panel/Label
-@onready var weapon_info = $InventoryUI/TopVbox/HBoxContainer/WeaponSlots/WeaponInfo/Label
+@onready var inventory_grid = $TopVbox/HBoxContainer/VBoxContainer/Panel2/Inventory
+@onready var info_panel = $TopVbox/HBoxContainer/PlayerArea/Panel/Label
+@onready var weapon_info = $TopVbox/HBoxContainer/WeaponSlots/WeaponInfo/Label
 var selected_item
 var selected_weapon
 
@@ -16,19 +16,12 @@ func _ready():
 	inventory_grid.set_meta('type', ['empty', 'weapon', 'chip', 'attachment'])
 
 	#load_icon_from_json("res://JSONs/.json")
-	load_icon_from_json("res://JSONs/laser.json")
-	load_icon_from_json("res://JSONs/laser.json")
-	load_icon_from_json("res://JSONs/laser.json")
-	load_icon_from_json("res://JSONs/laser.json")
-	load_icon_from_json("res://JSONs/ball_laser.json")
-	load_icon_from_json("res://JSONs/heavy_laser.json")
 	load_icon_from_json("res://JSONs/chips/blue_chip.json")
 
-	$InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel1.set_meta('equip_signal', SignalBus.weapon_equipped)
-	$InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel1.set_meta('weapon_slot_number', 1)
-	$InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel2.set_meta('weapon_slot_number', 2)
-	$InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel3.set_meta('weapon_slot_number', 3)
-	$InventoryUI/TopVbox/HBoxContainer/WeaponSlots/Weapon_Panel4.set_meta('weapon_slot_number', 4)
+	%Weapon_Panel1.set_meta("weapon_slot_number", 1)
+	%Weapon_Panel2.set_meta("weapon_slot_number", 2)
+	%Weapon_Panel3.set_meta("weapon_slot_number", 3)
+	%Weapon_Panel4.set_meta("weapon_slot_number", 4)
 
 func _on_item_selected(item):
 	selected_item = item

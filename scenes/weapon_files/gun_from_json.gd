@@ -19,32 +19,10 @@ func _ready() -> void:
 	raycast = $RayCast2D
 	#setup()
 
+func setup(path):
+	Utils.load_json(path)
+	pass
 
-func load_json(path):
-	var file := FileAccess.open(path, FileAccess.READ)
-	if file == null:
-		push_error("Failed to open JSON file at: " + path)
-		return
-
-	var json_text := file.get_as_text()
-	file.close()
-
-	var json := JSON.new()
-	var error := json.parse(json_text)
-
-	if error != OK:
-		push_error("JSON parse error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
-		return
-
-	var data = json.data
-	if typeof(data) != TYPE_DICTIONARY:
-		push_error("Invalid JSON structure: Expected Dictionary at root")
-		return
-
-	id = data.get("id", "")
-	display_name = data.get("name", "")
-	type = data.get("type", "")
-	sprite_path = data.get("sprite_path", "")
 
 #func setup():
 	#range = 600

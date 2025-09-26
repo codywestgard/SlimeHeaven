@@ -32,24 +32,37 @@ func get_farthest_target(start_pos: Vector2, entities: Array, max_dist: float = 
 			nearest = entity
 	return nearest
 
-func get_highest_hp_target(start_pos: Vector2, entities: Array, max_dist: float = 500) -> Node2D:
+func get_highest_stat_target(entities, stat: String):
 	var best_target : Node2D
 	var best_metric := -INF
-	
+	var metric = 0.
+
 	for entity in entities:
-		var metric = entity.hp
-		if metric > best_metric:
-			best_target = entity
-			best_metric = metric
+		metric = entity.get(stat)
+		if metric:
+			if metric > best_metric:
+				best_target = entity
+				best_metric = metric
 	return best_target
-	
-func get_lowest_hp_target(start_pos: Vector2, entities: Array, max_dist: float = 500) -> Node2D:
+
+func get_lowest_stat_target(entities, stat: String): # -> Node2D:
 	var best_target : Node2D
 	var best_metric := INF
-	
+	var metric = 0.
+
 	for entity in entities:
-		var metric = entity.hp
-		if metric < best_metric:
-			best_target = entity
-			best_metric = metric
+		metric = entity.get(stat)
+		if metric:
+			if metric < best_metric:
+				best_target = entity
+				best_metric = metric
 	return best_target
+
+func get_highest_hp_target(entities: Array) -> Node2D:
+	return get_highest_stat_target(entities, "hp")
+	
+func get_lowest_hp_target(entities: Array) -> Node2D:
+	return get_lowest_stat_target(entities, "hp")
+
+func target_radar():
+	pass

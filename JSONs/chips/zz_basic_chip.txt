@@ -4,4 +4,6 @@
 	"display_information": "Targets nearest enemy",
 	"type": "chip",
 	"sprite_path": "res://assets/chips/blue_chip.png",
+	"targeting_alg": "String that describes it",
+	"target stat": "", # blank is acceptable
 }

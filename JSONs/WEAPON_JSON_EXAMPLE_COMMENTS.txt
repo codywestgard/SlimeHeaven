@@ -1,0 +1,84 @@
+{
+	### All Files Must Have These Categories:
+	"id": "basic_gun_55",
+	"display_name": "Basic Gun",
+	"scene_path": "res://scenes/weapon_files/basic_gun.tscn",
+	"sprite_path": "res://assets/weapons/basic_gun.png",
+	"macroclass": "weapon", # three macro classes are weapon, chip, attachment
+	
+	### From here and below, are optional
+	### Game will use default values from the scene if they are not present
+	### 
+	"microclass": ["firearm"], # Default is blank array
+	"bullet_scene_path": "", #Default is basic_bullet scene, use this path for a diff one
+	"bullet_image": "", #to change sprite for the bullet
+	"damage": 10.0, # Default is 1
+	"bullet_count": 1, #Default is 1, use higher values to make things like shotguns
+	"fire_cooldown": 1.0, # Default is 1
+	"accuracy": 1.0, # value from 0 to 1, default is 1
+	"range": 500, # default is 500
+	"ammo_full": 12, # default is none, not all weapons need a reload
+	"reload": 2.0, #number of seconds to reload the weapon, requires ammo
+	"rarity": "Common", #Common, Rare, Epic, or Legendary. default is common
+
+	"bonuses": [], #Not sure how to structure yet
+
+}
+
+
+## Most guns can re-use the same scenes (basic gun, basic laser)
+# You can adjust the other variables and sprite to make a new gun
+# some guns do need special logic (eg lasers that charge, guns that don't reload)
+# too special just needs its own scene
+
+# Final plan:
+# Game loads a gun from here
+# Adds a random modification (eg +10% fire rate) with rarity chance
+
+# Final loader needs to combine gun + chip + attachment dynamically
+
+    "id": "",
+    "display_name": "",
+    "scene_path": "",
+    "sprite_path": "",
+    "macroclass": "",
+
+    "rarity": "Common",
+    "microclass": [],
+
+    "bullet_scene_path": "",
+    "bullet_image": "",
+    "damage": 10.0,
+    "bullet_count": 1,
+    "fire_cooldown": 1.0,
+    "accuracy": 1.0,
+    "range": 500,
+    "ammo_full": 12,
+    "reload": 2.0,
+
+    "bonuses": [],
+
+####################################
+
+    "id": "",
+    "display_name": "",
+    "scene_path": "res://scenes/weapon_files_2/basic_firearm.tscn",
+    "sprite_path": "",
+    "macroclass": "Weapon",
+
+    "rarity": "Common",
+    "microclass": ["firearm"],
+
+    "damage": 10.0,
+    "bullet_count": 1,
+    "fire_cooldown": 1.0,
+    "accuracy": 1.0,
+    "range": 500,
+    "ammo_full": 12,
+    "reload": 1.0,
+
+    "bonuses": [],
+
+
+
+

@@ -6,8 +6,12 @@ var fire_cooldown: float
 var bullet_scene: PackedScene
 var line: Line2D
 var raycast : RayCast2D
+var full_ammo: int
+var ammo: int
+var reload_duration : float
 
 var targeting_alg : Callable
+var target: Node2D
 func _ready() -> void:
 	line = $Line2D
 	raycast = $RayCast2D
@@ -16,7 +20,10 @@ func _ready() -> void:
 func setup():
 	range = 600
 	damage = 50
-	fire_cooldown = 0.8
+	fire_cooldown = 0.5
+	full_ammo = 10
+	ammo = full_ammo
+	reload_duration = 5.0
 	bullet_scene = preload("res://scenes/weapon_files/basic_bullet.tscn")
 	#targeting_alg = TargetingAlgorithms()
 	update_self()
@@ -41,8 +48,8 @@ func _physics_process(delta: float) -> void:
 		look_at(target.global_position)
 		if false:
 			adjust_laser_sight()
-		if sum_delta > fire_cooldown:
-			fire(target)
+		if sum_delta > fire_cooldown and ammo > 0:
+			fire()
 			sum_delta = 0
 
 func update_targeting_algorithm():
@@ -50,13 +57,31 @@ func update_targeting_algorithm():
 
 func aim():
 	var enemy_list = get_overlapping_bodies()
-	var target = TargetingAlgorithms.get_nearest_target(self.global_position, enemy_list)
+	#var target = TargetingAlgorithms.get_nearest_target(self.global_position, enemy_list)
+	var target = TargetingAlgorithms.get_lowest_stat_target(enemy_list, "hp")
+	if target:
+		look_at(target.global_position)
 	return target
 
-func fire(target):
+func fire():
 	var new_bullet = bullet_scene.instantiate()
 	add_child(new_bullet)
 	new_bullet.setup()
+	ammo -= 1
+	if ammo <= 0:
+		reload()
+
+func reload():
+	print('Reloading weapon ', ammo)
+	var value = $TextureProgressBar.value
+	var t := 0.0
+	while t < reload_duration:
+		await get_tree().process_frame
+		t += get_process_delta_time()
+		value = t / reload_duration
+	value = 0.0
+	ammo = full_ammo
+	print('Reload complete ', ammo)
 
 func adjust_laser_sight():
 	raycast.target_position = Vector2(1000,0)

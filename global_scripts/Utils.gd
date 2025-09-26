@@ -20,9 +20,10 @@ func get_inventory_top_node():
 	return inventory_node
 
 func clear_children(target_node: Node):
-	for child in target_node.get_children():
-		child.queue_free()
-		
+	if target_node:
+		for child in target_node.get_children():
+			child.queue_free()
+
 func set_friendly_collision(entity):
 	## Player does this, will collide with enemies not player stuff
 	entity.set_collision_layer_value(Utils.CollisionLayers.PLAYER, true)
@@ -37,7 +38,7 @@ func set_hostile_collision(entity):
 	entity.set_collision_mask_value(Utils.CollisionLayers.PLAYER, true)
 	entity.set_collision_mask_value(Utils.CollisionLayers.ENEMIES, false)
 
-func load_json(path):
+func load_json(path:String):
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
 		push_error("Failed to open JSON file at: " + path)

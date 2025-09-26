@@ -16,10 +16,11 @@ var collision_point : Vector2
 var velocity
 var damage := 10
 
-func setup():
+func setup(new_direction, damage):
 	distance_traveled = 0
-	direction = Vector2(1, 0)
-	speed = 500
+	direction = new_direction
+	speed = 600
+	self.damage = damage
 
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
@@ -34,7 +35,8 @@ func _on_body_entered(body: Node) -> void:
 func _on_impact(body):
 	if body.has_method("take_damage"):
 		body.take_damage(self.damage)
-	die()
+		if body.hp > 0 - self.damage:
+			die()
 
 func die():
 	queue_free()

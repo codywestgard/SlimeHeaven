@@ -2,15 +2,19 @@ extends CharacterBody2D
 
 var player_pos : Vector2
 
-var speed: float = 60.0
-var hp: float
+var speed: float = 100.0
+var hp: float = 20.
+var greystar = preload("res://scenes/enemy_files/collectible.tscn")
 
-func _init(load_hp: float = 20, load_speed: float = 80.):
-	self.hp = load_hp
-	self.speed = load_speed
+func _init():
 	add_to_group("enemies")
 	Utils.set_hostile_collision(self)
 
+func setup_from_JSON(path):
+	var data = Utils.load_json(path)
+	self.hp = data.hp
+	self.speed = data.speed
+	
 
 func setup_enemy(load_hp: float = 200, load_speed: float = 80.):
 	self.hp = load_hp
@@ -37,4 +41,10 @@ func take_damage(amount):
 		die()
 
 func die():
+	# emit signal to spawn dropped item
 	queue_free()
+
+func drop_item():
+	pass
+
+	

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://i7sljytx23yt"]
+
+[ext_resource type="Script" uid="uid://xa2p5w3gr45g" path="res://scenes/UI_files/ui_map.gd" id="1_84x61"]
+
+[node name="UI_Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_84x61")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 39.0
+offset_bottom = 37.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.754076, 0.411543, 0.257487, 1)

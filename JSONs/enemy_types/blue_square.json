@@ -1,0 +1,10 @@
+{
+	"id": "blue_square",
+	"display_name": "Blue Square",
+	"sprite_path": "res://assets/shape_enemies/blue_square.png",
+	"scene_path": "res://scenes/weapon_files/basic_enemy.tscn",
+
+	"hp":20,
+	"speed":100,
+
+}

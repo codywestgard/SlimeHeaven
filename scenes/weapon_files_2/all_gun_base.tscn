@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xaaeeivnkbom"]
+
+[ext_resource type="Texture2D" uid="uid://cmi385phclf7b" path="res://assets/laser.png" id="1_slx0l"]
+[ext_resource type="Script" uid="uid://b1257c25bf2n8" path="res://scenes/weapon_files_2/all_gun_base.gd" id="1_xium8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xium8"]
+
+[node name="All_Gun_Base" type="Area2D"]
+script = ExtResource("1_xium8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_slx0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xium8")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+default_color = Color(0.755798, 0.0245002, 0.196879, 1)

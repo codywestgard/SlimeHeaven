@@ -1,0 +1,10 @@
+{
+	"id": "red_square",
+	"display_name": "Red Square",
+	"sprite_path": "res://assets/shape_enemies/red_square.png",
+	"scene_path": "res://scenes/weapon_files/basic_enemy.tscn",
+
+	"hp":20,
+	"speed":100,
+
+}

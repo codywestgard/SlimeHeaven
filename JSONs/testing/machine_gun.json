@@ -1,0 +1,21 @@
+{
+    "id": "machine_gun",
+    "display_name": "Machine Gun",
+    "scene_path": "res://scenes/weapon_files_2/basic_firearm.tscn",
+    "sprite_path": "res://assets/weapons/machine_gun.png",
+    "macroclass": "Weapon",
+
+    "rarity": "Common",
+    "microclass": ["firearm"],
+
+    "damage": 10.0,
+    "bullet_count": 1,
+    "fire_cooldown": 1.0,
+    "accuracy": 1.0,
+    "range": 500,
+    "ammo_full": 12,
+    "reload": 1.0,
+
+    "bonuses": [],
+
+}

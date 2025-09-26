@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://elqkk8xiflsj"]
+
+[ext_resource type="Script" uid="uid://dw7xbr6nqtd1s" path="res://scenes/UI_files/game_of_life.gd" id="1_8xkq8"]
+
+[node name="GameOfLife" type="Node2D"]
+script = ExtResource("1_8xkq8")
+
+[node name="CellContainer" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxf22nqwdcilh"]
+
+[ext_resource type="Script" uid="uid://dr5gho2cn3k8i" path="res://scenes/library.gd" id="1_0cqvf"]
+[ext_resource type="PackedScene" uid="uid://mqacajjw3blo" path="res://scenes/UI_files/three_choice_window.tscn" id="2_m4m2s"]
+
+[node name="Library" type="Node2D"]
+script = ExtResource("1_0cqvf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="Three_Choice_Window" parent="." instance=ExtResource("2_m4m2s")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

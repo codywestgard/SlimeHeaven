@@ -1,0 +1,20 @@
+{
+    "id": "rocket_launcher",
+    "display_name": "Rocket Launcher",
+    "scene_path": "res://scenes/weapon_files_2/basic_firearm.tscn",
+    "sprite_path": "res://assets/weapons/rocket.png",
+    "macroclass": "Weapon",
+
+    "rarity": "Common",
+    "microclass": ["firearm"],
+
+    "damage": 10.0,
+    "bullet_count": 1,
+    "fire_cooldown": 1.0,
+    "accuracy": 1.0,
+    "range": 500,
+    
+
+    "bonuses": [],
+
+}

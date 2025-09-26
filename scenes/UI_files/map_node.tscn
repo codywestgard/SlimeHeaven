@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://qmpwuqvkxj6g"]
+
+[ext_resource type="Script" uid="uid://2k8geha04q8s" path="res://scenes/UI_files/map_node.gd" id="1_h1wgt"]
+
+[node name="MapNode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1wgt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 6.0
+offset_bottom = 5.0
